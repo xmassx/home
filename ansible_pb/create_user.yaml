@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: False
+  vars:
+    user: xmass
+    uid: 1001
+    adm_group: wheel
+  tasks:
+    - name: test connect
+      ping:
+
+    - name: "Test {{ user }}"
+      command: "id {{ user }}"
+      register: is_user
+      ignore_errors: True
+      changed_when: is_user.rc != 0
+
+    - name: "Create {{ user }}"
+      user: "name={{ user }} shell='/bin/bash' uid={{ uid }}"
+      when: is_user.rc != 0
+
+    - block:
+      - name: "Authorized"
+        authorized_key: state=present user={{ user }} key={{ lookup('file', "~/tmp/{{user}}.id_rsa.pub") }} manage_dir=yes
+
+      - name: "add {{ user }} to sudoers"
+        lineinfile: "dest=/etc/sudoers state=present regexp='{{ user }}.*' line='{{ user }} ALL=(ALL) NOPASSWD: ALL'"
+      when: is_user.stdout.find({{ adm_group }}) == -1
