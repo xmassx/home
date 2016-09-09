@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates/frontXX.loveplanet'
+let g:netrw_dirhist_2='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates/frontXX.loveplanet/conf.d'
+let g:netrw_dirhist_3='/Users/mprohorkin/rbc_gits/puppet/modules/roles/manifests/nginx_sites'
+let g:netrw_dirhist_4='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates/mXX.dev.medialand/vhosts.d'
+let g:netrw_dirhist_5='/Users/mprohorkin/rbc_gits/puppet/modules/apache/manifests/vhost'
+let g:netrw_dirhist_6='/Users/mprohorkin/rbc_gits/puppet/modules/nginx'
+let g:netrw_dirhist_7='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates'
+let g:netrw_dirhist_8='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates/sXX.test.v3.marketing'
+let g:netrw_dirhist_9='/Users/mprohorkin/rbc_gits/puppet/modules/nginx/templates/sXX.test.v3.marketing/vhosts.d'
